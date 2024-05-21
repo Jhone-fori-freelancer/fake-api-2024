@@ -1,0 +1,86 @@
+doctype html
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Hot Sale
+    style.
+     
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        font-size: 28px;
+        color: #333;
+      }
+
+      .grilla {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .producto {
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #251b8131;  
+      }
+
+      .producto img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+
+      .producto h3 {
+        margin-top: 0;
+        font-size: 20px;
+        color: #333;
+      }
+
+      .producto p {
+        margin: 10px 0;
+        color: #666;
+      }
+
+      .precioAhorro {
+        font-weight: bold;
+        color: rgba(255, 0, 0, 0.781);
+      }
+      .btn-agregar {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .btn-agregar:hover {
+        background-color: #0056b3;
+      }
+
+    script.
+      document.addEventListener('DOMContentLoaded', function() {
+        var descriptions = document.querySelectorAll('.producto-description');
+        descriptions.forEach(function(description) {
+          var originalText = description.textContent;
+          if (originalText.length > 30) {
+            description.textContent = originalText.slice(0, 30) + '...';
+           
+          }
+          description.addEventListener('mouseover', function() {
+            this.textContent = originalText;
+          });
+          description.addEventListener('mouseout', function() {
+            this.textContent = originalText.slice(0, 30) + '...';
+          });
+        });
+      });
+  header 
+    
+  
